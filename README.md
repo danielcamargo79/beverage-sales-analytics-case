@@ -36,6 +36,7 @@ BeverageSalesCase/
 ├── .gitignore
 └── requirements.txt
 
+
 ## Organização dos Notebooks
 
 Os notebooks foram organizados em ordem numérica para representar o fluxo lógico do projeto, desde a descoberta dos dados até as validações finais de qualidade.
