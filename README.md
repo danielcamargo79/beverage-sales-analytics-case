@@ -4,9 +4,9 @@
 
 Este projeto apresenta um case de **Analytics, Data Visualization e Business Analytics** aplicado a vendas de bebidas.
 
-O objetivo é estruturar dados comerciais, criar uma base analítica confiável e responder perguntas de negócio relacionadas a vendas, produtos, canais, regiões e performance comercial.
+O objetivo é estruturar dados comerciais, criar uma base analítica confiável e responder perguntas de negócio relacionadas a vendas, marcas, canais, regiões, pacotes, volume e margem estimada.
 
-Este projeto complementa o repositório de Engenharia de Dados com Databricks, trazendo uma visão mais orientada a **KPIs, análise exploratória, storytelling e desenho de dashboard executivo**.
+Este projeto complementa o repositório de Engenharia de Dados com Databricks, trazendo uma visão mais orientada a **KPIs, análise exploratória, storytelling e dashboard executivo**.
 
 ---
 
@@ -18,8 +18,8 @@ O projeto foi desenvolvido para demonstrar a capacidade de:
 * Estruturar dados para análise.
 * Definir indicadores comerciais.
 * Explorar padrões de vendas.
-* Criar insights acionáveis.
-* Propor uma visão executiva de dashboard.
+* Criar métricas estimadas de receita, custo e margem.
+* Desenvolver dashboard executivo no Tableau Public.
 * Documentar decisões analíticas e de DataViz.
 
 ---
@@ -27,56 +27,65 @@ O projeto foi desenvolvido para demonstrar a capacidade de:
 ## 3. Tecnologias utilizadas
 
 * Databricks Free Edition
+* Apache Spark / PySpark
+* SQL
 * Python
 * Pandas
-* PySpark
-* SQL
-* Jupyter Notebook
+* Tableau Public
 * GitHub
-* Power BI / Tableau como proposta de visualização
+* Markdown
 
 ---
 
-## 4. Perguntas de negócio
+## 4. Dashboard
+
+O dashboard executivo foi desenvolvido no **Tableau Public** com foco em receita estimada, margem estimada e volume de vendas.
+
+* [Acessar dashboard no Tableau Public](https://public.tableau.com/app/profile/daniel.de.camargo7724/viz/BeverageSalesAnalyticsDashboard/BeverageSalesAnalyticsDashboard)
+
+![Beverage Sales Analytics Dashboard](./dashboard/screenshots/beverage_sales_dashboard.png)
+
+---
+
+## 5. Métricas disponíveis
+
+O dashboard apresenta os seguintes indicadores:
+
+* Receita estimada
+* Custo estimado
+* Margem bruta estimada
+* Margem percentual estimada
+* Volume total
+* Receita estimada por marca
+* Margem estimada por região
+* Receita estimada por canal
+* Volume por pacote
+
+> Os valores financeiros são estimados para fins de portfólio profissional e não representam dados reais de negócio.
+
+---
+
+## 6. Perguntas de negócio
 
 Este case busca responder perguntas como:
 
-* Qual é a receita total e a receita média por pedido?
-* Quais produtos possuem maior participação nas vendas?
-* Quais regiões apresentam melhor performance comercial?
-* Quais canais concentram maior volume de vendas?
-* Existe sazonalidade nas vendas?
-* Quais categorias apresentam maior ou menor margem?
-* Quais indicadores deveriam compor um dashboard executivo?
+* Qual é a receita estimada total?
+* Qual é a margem estimada total?
+* Qual é a margem percentual estimada?
+* Qual é o volume total de vendas?
+* Quais marcas geram maior receita estimada?
+* Quais regiões apresentam maior margem estimada?
+* Quais canais concentram maior receita estimada?
+* Quais pacotes possuem maior volume vendido?
 
 ---
 
-## 5. KPIs sugeridos
-
-Os principais indicadores propostos são:
-
-* Receita bruta
-* Receita líquida
-* Quantidade de pedidos
-* Quantidade de itens vendidos
-* Ticket médio
-* Preço médio por produto
-* Receita por categoria
-* Receita por região
-* Receita por canal
-* Participação percentual por produto
-* Crescimento por período
-* Ranking de produtos
-
----
-
-## 6. Estrutura do repositório
+## 7. Estrutura do repositório
 
 ```text
 beverage-sales-analytics-case/
 │
 ├── notebooks/
-│   └── exploratory_analysis.ipynb
 │
 ├── docs/
 │   ├── business_context.md
@@ -85,8 +94,11 @@ beverage-sales-analytics-case/
 │   └── dataviz_decisions.md
 │
 ├── dashboard/
+│   ├── README.md
+│   ├── tableau_public_link.md
 │   ├── mockups/
 │   └── screenshots/
+│       └── beverage_sales_dashboard.png
 │
 ├── sql/
 │   └── transformations.sql
@@ -97,13 +109,12 @@ beverage-sales-analytics-case/
 │
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-└── LICENSE
+└── .gitignore
 ```
 
 ---
 
-## 7. Abordagem analítica
+## 8. Abordagem analítica
 
 A abordagem utilizada no projeto segue as etapas:
 
@@ -114,68 +125,118 @@ Análise das fontes disponíveis
         ↓
 Tratamento e padronização dos dados
         ↓
-Criação de indicadores
+Criação de base analítica
+        ↓
+Enriquecimento com métricas estimadas
+        ↓
+Definição de KPIs
         ↓
 Análise exploratória
         ↓
-Identificação de insights
+Construção do dashboard
         ↓
-Proposta de dashboard executivo
+Publicação no Tableau Public
         ↓
-Documentação das decisões analíticas
+Documentação do projeto
 ```
 
 ---
 
-## 8. Entregáveis do projeto
+## 9. Enriquecimento da base
 
-Este repositório contém ou prevê os seguintes entregáveis:
+A base original possuía informações de volume de vendas por marca, região, canal e pacote.
 
-* Notebook com análise exploratória.
-* Documentação do contexto de negócio.
-* Dicionário de KPIs.
-* Registro dos principais insights.
-* Proposta de decisões de DataViz.
-* Estrutura para mockups e screenshots de dashboard.
-* Validação básica da estrutura do projeto via GitHub Actions.
+Para enriquecer o case e permitir análises financeiras, foi criada uma camada estimada com:
 
----
+* Preço unitário estimado por marca.
+* Custo unitário estimado por marca.
+* Fatores de ajuste por região.
+* Fatores de ajuste por grupo de canal.
+* Fatores de ajuste por tipo de canal.
+* Fatores de ajuste por pacote.
 
-## 9. Decisões de DataViz
+A partir disso, foram calculados:
 
-A proposta de visualização deve priorizar:
+* `estimated_revenue`
+* `estimated_cost`
+* `estimated_gross_margin`
+* `estimated_margin_pct`
 
-* Clareza na leitura dos KPIs.
-* Separação entre visão executiva e visão analítica.
-* Uso de filtros por período, região, canal e produto.
-* Destaque para tendências, rankings e variações.
-* Design limpo, com foco em tomada de decisão.
-* Storytelling orientado a perguntas de negócio.
+Esses campos foram criados exclusivamente para fins de análise e portfólio.
 
 ---
 
-## 10. Limitações
+## 10. Decisões de DataViz
 
-* O projeto foi desenvolvido com foco em portfólio.
-* Os dados podem representar uma amostra ou cenário simulado.
-* O dashboard final pode ser representado por mockups ou screenshots.
-* Algumas regras de negócio podem ser inferidas a partir dos dados disponíveis.
-* Não há publicação de dados sensíveis ou proprietários.
+A identidade visual do dashboard utiliza cores com significado analítico:
 
----
+| Cor     | Uso              |
+| ------- | ---------------- |
+| Laranja | Receita estimada |
+| Roxo    | Margem estimada  |
+| Azul    | Volume           |
 
-## 11. Próximas evoluções
+O dashboard foi organizado com:
 
-* Criar dashboard em Power BI ou Tableau Public.
-* Adicionar mockups de telas executivas.
-* Criar documentação detalhada dos KPIs.
-* Adicionar consultas SQL de transformação.
-* Criar GitHub Action para validar a estrutura do projeto.
-* Publicar uma release `v1.0.0`.
-* Linkar este projeto ao README principal do perfil.
+* KPIs principais no topo.
+* Evolução temporal da receita estimada no centro.
+* Análises por marca, região, canal e pacote na parte inferior.
+* Filtros na lateral direita.
 
 ---
 
-## 12. Autor
+## 11. Filtros disponíveis
+
+O dashboard permite análise por:
+
+* Período
+* Status do Volume
+* Marca
+* Região
+* Grupo do Canal
+* Tipo do Canal
+* Pacote
+
+O filtro **Status do Volume** permite separar:
+
+* Venda positiva
+* Sem volume
+* Ajuste/Devolução
+
+---
+
+## 12. Documentação complementar
+
+* [Contexto de negócio](./docs/business_context.md)
+* [Dicionário de KPIs](./docs/kpis.md)
+* [Insights analíticos](./docs/insights.md)
+* [Decisões de DataViz](./docs/dataviz_decisions.md)
+* [Link do Tableau Public](./dashboard/tableau_public_link.md)
+* [Exemplos SQL](./sql/transformations.sql)
+
+---
+
+## 13. Limitações
+
+* Os valores financeiros são estimados.
+* O projeto foi desenvolvido para fins de portfólio.
+* A base não representa valores reais de negócio.
+* O dashboard foi publicado no Tableau Public.
+* A análise depende das regras simuladas de preço, custo e fatores de ajuste.
+
+---
+
+## 14. Próximas evoluções
+
+* Adicionar uma página analítica detalhada no Tableau.
+* Criar uma versão mobile do dashboard.
+* Incluir documentação técnica da query final usada no Databricks.
+* Adicionar validações de qualidade da base final.
+* Evoluir o projeto para dbt ou outro framework analítico.
+* Criar uma release versionada com o dashboard publicado.
+
+---
+
+## 15. Autor
 
 Projeto desenvolvido por **Daniel de Camargo** como parte do portfólio profissional de Dados, Analytics e Data Visualization.
