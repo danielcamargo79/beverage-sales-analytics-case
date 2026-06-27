@@ -1,66 +1,181 @@
-# BeverageSalesCase
+# Beverage Sales Analytics Case
 
-## Objetivo
+## 1. Visão geral
 
-Este projeto foi desenvolvido como um case técnico de análise de vendas de bebidas, utilizando Databricks Free para ingestão, tratamento, modelagem e análise dos dados.
+Este projeto apresenta um case de **Analytics, Data Visualization e Business Analytics** aplicado a vendas de bebidas.
 
-O objetivo principal foi estruturar os dados em camadas, aplicar boas práticas de engenharia de dados e responder perguntas de negócio a partir de uma base analítica confiável.
+O objetivo é estruturar dados comerciais, criar uma base analítica confiável e responder perguntas de negócio relacionadas a vendas, produtos, canais, regiões e performance comercial.
 
-## Ambiente utilizado
+Este projeto complementa o repositório de Engenharia de Dados com Databricks, trazendo uma visão mais orientada a **KPIs, análise exploratória, storytelling e desenho de dashboard executivo**.
 
-- Databricks Free
-- Python
-- PySpark
-- SQL
-- Delta/Parquet, se aplicável
-- GitHub
+---
 
-## Estrutura do projeto
+## 2. Objetivo do projeto
+
+O projeto foi desenvolvido para demonstrar a capacidade de:
+
+* Entender um problema de negócio.
+* Estruturar dados para análise.
+* Definir indicadores comerciais.
+* Explorar padrões de vendas.
+* Criar insights acionáveis.
+* Propor uma visão executiva de dashboard.
+* Documentar decisões analíticas e de DataViz.
+
+---
+
+## 3. Tecnologias utilizadas
+
+* Databricks Free Edition
+* Python
+* Pandas
+* PySpark
+* SQL
+* Jupyter Notebook
+* GitHub
+* Power BI / Tableau como proposta de visualização
+
+---
+
+## 4. Perguntas de negócio
+
+Este case busca responder perguntas como:
+
+* Qual é a receita total e a receita média por pedido?
+* Quais produtos possuem maior participação nas vendas?
+* Quais regiões apresentam melhor performance comercial?
+* Quais canais concentram maior volume de vendas?
+* Existe sazonalidade nas vendas?
+* Quais categorias apresentam maior ou menor margem?
+* Quais indicadores deveriam compor um dashboard executivo?
+
+---
+
+## 5. KPIs sugeridos
+
+Os principais indicadores propostos são:
+
+* Receita bruta
+* Receita líquida
+* Quantidade de pedidos
+* Quantidade de itens vendidos
+* Ticket médio
+* Preço médio por produto
+* Receita por categoria
+* Receita por região
+* Receita por canal
+* Participação percentual por produto
+* Crescimento por período
+* Ranking de produtos
+
+---
+
+## 6. Estrutura do repositório
 
 ```text
-BeverageSalesCase/
+beverage-sales-analytics-case/
+│
 ├── notebooks/
-│   ├── 00_discovery.ipynb
-│   ├── 01_bronze_ingestion.ipynb
-│   ├── 02_silver_transformation.ipynb
-│   ├── 03_gold_dimensional_model.ipynb
-│   ├── 04_business_questions.ipynb
-│   └── 05_data_quality.ipynb
-├── data/
-│   └── sample/
+│   └── exploratory_analysis.ipynb
+│
 ├── docs/
-├── reports/
-├── dashboards/
-├── src/
+│   ├── business_context.md
+│   ├── kpis.md
+│   ├── insights.md
+│   └── dataviz_decisions.md
+│
+├── dashboard/
+│   ├── mockups/
+│   └── screenshots/
+│
+├── sql/
+│   └── transformations.sql
+│
+├── .github/
+│   └── workflows/
+│       └── project-check.yml
+│
 ├── README.md
+├── requirements.txt
 ├── .gitignore
-└── requirements.txt
+└── LICENSE
+```
 
+---
 
-## Organização dos Notebooks
+## 7. Abordagem analítica
 
-Os notebooks foram organizados em ordem numérica para representar o fluxo lógico do projeto, desde a descoberta dos dados até as validações finais de qualidade.
+A abordagem utilizada no projeto segue as etapas:
 
-### 00_discovery.ipynb
+```text
+Entendimento do problema de negócio
+        ↓
+Análise das fontes disponíveis
+        ↓
+Tratamento e padronização dos dados
+        ↓
+Criação de indicadores
+        ↓
+Análise exploratória
+        ↓
+Identificação de insights
+        ↓
+Proposta de dashboard executivo
+        ↓
+Documentação das decisões analíticas
+```
 
-Notebook responsável pelo entendimento inicial dos dados, análise da estrutura das tabelas, tipos de campos, volume de registros, valores nulos e primeiros diagnósticos.
+---
 
-### 01_bronze_ingestion.ipynb
+## 8. Entregáveis do projeto
 
-Notebook responsável pela ingestão dos dados brutos no ambiente Databricks, formando a camada Bronze do projeto.
+Este repositório contém ou prevê os seguintes entregáveis:
 
-### 02_silver_transformation.ipynb
+* Notebook com análise exploratória.
+* Documentação do contexto de negócio.
+* Dicionário de KPIs.
+* Registro dos principais insights.
+* Proposta de decisões de DataViz.
+* Estrutura para mockups e screenshots de dashboard.
+* Validação básica da estrutura do projeto via GitHub Actions.
 
-Notebook responsável pelo tratamento dos dados, incluindo padronização de nomes de colunas, conversão de tipos, tratamento de nulos, ajustes de datas e preparação dos dados para consumo analítico.
+---
 
-### 03_gold_dimensional_model.ipynb
+## 9. Decisões de DataViz
 
-Notebook responsável pela criação da camada Gold, com dados modelados para análise, incluindo tabelas finais, fatos, dimensões e estruturas preparadas para responder perguntas de negócio.
+A proposta de visualização deve priorizar:
 
-### 04_business_questions.ipynb
+* Clareza na leitura dos KPIs.
+* Separação entre visão executiva e visão analítica.
+* Uso de filtros por período, região, canal e produto.
+* Destaque para tendências, rankings e variações.
+* Design limpo, com foco em tomada de decisão.
+* Storytelling orientado a perguntas de negócio.
 
-Notebook responsável por responder as perguntas de negócio propostas no case, gerar indicadores, análises e insights a partir dos dados tratados.
+---
 
-### 05_data_quality.ipynb
+## 10. Limitações
 
-Notebook responsável pelas validações de qualidade dos dados, como verificação de nulos, duplicidades, consistência de chaves, contagem de registros e integridade entre as camadas Bronze, Silver e Gold.
+* O projeto foi desenvolvido com foco em portfólio.
+* Os dados podem representar uma amostra ou cenário simulado.
+* O dashboard final pode ser representado por mockups ou screenshots.
+* Algumas regras de negócio podem ser inferidas a partir dos dados disponíveis.
+* Não há publicação de dados sensíveis ou proprietários.
+
+---
+
+## 11. Próximas evoluções
+
+* Criar dashboard em Power BI ou Tableau Public.
+* Adicionar mockups de telas executivas.
+* Criar documentação detalhada dos KPIs.
+* Adicionar consultas SQL de transformação.
+* Criar GitHub Action para validar a estrutura do projeto.
+* Publicar uma release `v1.0.0`.
+* Linkar este projeto ao README principal do perfil.
+
+---
+
+## 12. Autor
+
+Projeto desenvolvido por **Daniel de Camargo** como parte do portfólio profissional de Dados, Analytics e Data Visualization.
