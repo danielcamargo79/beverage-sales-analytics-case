@@ -1,32 +1,30 @@
 name: Project Structure Check
 
 on:
-pull_request:
-push:
-branches:
-- main
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-validate-project-structure:
-runs-on: ubuntu-latest
+  validate-project-structure:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Validate required files and folders
-    run: |
-      test -f README.md
-      test -f requirements.txt
-      test -d notebooks
-      test -d docs
-      test -f docs/business_context.md
-      test -f docs/kpis.md
-      test -f docs/insights.md
-      test -f docs/dataviz_decisions.md
-      test -d dashboard
-      test -f dashboard/README.md
-      test -d sql
-      test -f sql/transformations.sql
-```
+      - name: Validate required files and folders
+        run: |
+          test -f README.md
+          test -f requirements.txt
+          test -d notebooks
+          test -d docs
+          test -f docs/business_context.md
+          test -f docs/kpis.md
+          test -f docs/insights.md
+          test -f docs/dataviz_decisions.md
+          test -d dashboard
+          test -f dashboard/README.md
+          test -d sql
+          test -f sql/transformations.sql
